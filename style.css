@@ -92,6 +92,47 @@ header h1 {
   border-bottom-color: var(--dark);
 }
 
+/* ── Group filter ── */
+
+.group-filter {
+  background: var(--surface);
+  border-bottom: 1px solid var(--grey-light);
+  padding: 0.75rem 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.group-filter.hidden {
+  display: none;
+}
+
+.group-btn {
+  padding: 0.2rem 0.65rem;
+  border: 1px solid var(--grey-light);
+  border-radius: 2px;
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+  color: var(--grey);
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+
+.group-btn:hover {
+  border-color: var(--dark);
+  color: var(--dark);
+}
+
+.group-btn.active {
+  background: var(--dark);
+  border-color: var(--dark);
+  color: var(--surface);
+}
+
 /* ── Main layout ── */
 
 main {

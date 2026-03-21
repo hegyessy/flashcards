@@ -3,9 +3,12 @@
 
 const INDEX_URL = 'data/index.json';
 
-let deck = [];
+let fullDeck = [];   // all cards for the current category
+let deck = [];       // active (filtered) deck
 let currentIndex = 0;
 let isFlipped = false;
+let availableGroups = [];
+let selectedGroups = new Set();
 
 // DOM refs
 const categorySelect = document.getElementById('category-select');
@@ -17,6 +20,7 @@ const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 const shuffleBtn = document.getElementById('shuffle-btn');
 const resetBtn = document.getElementById('reset-btn');
+const groupFilter = document.getElementById('group-filter');
 
 // --- Data loading ---
 
@@ -42,6 +46,58 @@ function shuffle(arr) {
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
+}
+
+function buildActiveDeck() {
+  if (availableGroups.length === 0 || selectedGroups.size === availableGroups.length) {
+    return [...fullDeck];
+  }
+  return fullDeck.filter(c => selectedGroups.has(c.group));
+}
+
+// --- Group filter UI ---
+
+function renderGroupFilter() {
+  groupFilter.innerHTML = '';
+  if (availableGroups.length === 0) {
+    groupFilter.classList.add('hidden');
+    return;
+  }
+
+  groupFilter.classList.remove('hidden');
+
+  // "All" toggle
+  const allBtn = document.createElement('button');
+  allBtn.textContent = 'All';
+  allBtn.className = 'group-btn' + (selectedGroups.size === availableGroups.length ? ' active' : '');
+  allBtn.addEventListener('click', () => {
+    availableGroups.forEach(g => selectedGroups.add(g));
+    applyGroupFilter();
+  });
+  groupFilter.appendChild(allBtn);
+
+  availableGroups.forEach(group => {
+    const btn = document.createElement('button');
+    btn.textContent = group;
+    btn.className = 'group-btn' + (selectedGroups.has(group) ? ' active' : '');
+    btn.addEventListener('click', () => {
+      if (selectedGroups.has(group)) {
+        // Don't deselect the last group
+        if (selectedGroups.size > 1) selectedGroups.delete(group);
+      } else {
+        selectedGroups.add(group);
+      }
+      applyGroupFilter();
+    });
+    groupFilter.appendChild(btn);
+  });
+}
+
+function applyGroupFilter() {
+  deck = buildActiveDeck();
+  currentIndex = 0;
+  showCard();
+  renderGroupFilter();
 }
 
 // --- Render ---
@@ -112,8 +168,12 @@ resetBtn.addEventListener('click', () => {
 categorySelect.addEventListener('change', async () => {
   const selected = categorySelect.selectedOptions[0];
   const file = selected.dataset.file;
-  deck = await loadDeck(file);
+  fullDeck = await loadDeck(file);
+  availableGroups = [...new Set(fullDeck.map(c => c.group).filter(Boolean))];
+  selectedGroups = new Set(availableGroups);
+  deck = buildActiveDeck();
   currentIndex = 0;
+  renderGroupFilter();
   showCard();
 });
 
@@ -130,7 +190,11 @@ async function init() {
       categorySelect.appendChild(opt);
     });
     if (categories.length > 0) {
-      deck = await loadDeck(categories[0].file);
+      fullDeck = await loadDeck(categories[0].file);
+      availableGroups = [...new Set(fullDeck.map(c => c.group).filter(Boolean))];
+      selectedGroups = new Set(availableGroups);
+      deck = buildActiveDeck();
+      renderGroupFilter();
       showCard();
     }
   } catch (err) {
