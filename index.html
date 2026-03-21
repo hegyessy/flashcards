@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flashcards</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Flashcards</h1>
+    <div class="controls">
+      <select id="category-select" aria-label="Select category"></select>
+      <button id="shuffle-btn" title="Shuffle cards">Shuffle</button>
+      <button id="reset-btn" title="Reset to start">Reset</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="card-container">
+      <div id="card" class="card" role="button" tabindex="0" aria-label="Flashcard — click to flip">
+        <div class="card-inner">
+          <div class="card-front" aria-hidden="false">
+            <span id="card-front-text"></span>
+          </div>
+          <div class="card-back" aria-hidden="true">
+            <span id="card-back-text"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav">
+      <button id="prev-btn" aria-label="Previous card">&#8592; Prev</button>
+      <span id="progress"></span>
+      <button id="next-btn" aria-label="Next card">Next &#8594;</button>
+    </div>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
