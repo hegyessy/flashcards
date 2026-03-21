@@ -71,7 +71,11 @@ function renderGroupFilter() {
   allBtn.textContent = 'All';
   allBtn.className = 'group-btn' + (selectedGroups.size === availableGroups.length ? ' active' : '');
   allBtn.addEventListener('click', () => {
-    availableGroups.forEach(g => selectedGroups.add(g));
+    if (selectedGroups.size === availableGroups.length) {
+      selectedGroups.clear();
+    } else {
+      availableGroups.forEach(g => selectedGroups.add(g));
+    }
     applyGroupFilter();
   });
   groupFilter.appendChild(allBtn);
@@ -103,6 +107,15 @@ function applyGroupFilter() {
 // --- Render ---
 
 function showCard() {
+  if (deck.length === 0) {
+    frontText.textContent = '';
+    backText.textContent = '';
+    progress.textContent = '0 / 0';
+    prevBtn.disabled = true;
+    nextBtn.disabled = true;
+    unflip();
+    return;
+  }
   const card_data = deck[currentIndex];
   frontText.textContent = card_data.front;
   backText.textContent = card_data.back;
