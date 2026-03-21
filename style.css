@@ -210,7 +210,7 @@ main {
   transform: rotateY(180deg);
 }
 
-.card-front span {
+#card-front-text {
   font-size: 7rem;
   font-weight: 300;
   line-height: 1;
