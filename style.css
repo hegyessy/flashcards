@@ -207,6 +207,7 @@ main {
 .card-back {
   background: var(--dark);
   transform: rotateY(180deg);
+  flex-direction: column;
 }
 
 .card-front span {
@@ -222,6 +223,18 @@ main {
   letter-spacing: 0.18em;
   text-transform: lowercase;
   color: var(--orange);
+}
+
+.card-back-note {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--grey);
+  margin-top: 0.6rem;
+}
+
+.card-back-note:empty {
+  display: none;
 }
 
 /* Tap hint */

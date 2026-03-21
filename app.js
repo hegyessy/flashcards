@@ -24,6 +24,7 @@ const shuffleBtn = document.getElementById('shuffle-btn');
 const resetBtn = document.getElementById('reset-btn');
 const groupFilter = document.getElementById('group-filter');
 const modeSelector = document.getElementById('mode-selector');
+const backNote = document.getElementById('card-back-note');
 
 // --- Data loading ---
 
@@ -139,6 +140,7 @@ function showCard() {
   if (deck.length === 0) {
     frontText.textContent = '';
     backText.textContent = '';
+    backNote.textContent = '';
     progress.textContent = '0 / 0';
     prevBtn.disabled = true;
     nextBtn.disabled = true;
@@ -148,6 +150,7 @@ function showCard() {
   const card_data = deck[currentIndex];
   frontText.textContent = currentMode ? card_data[currentMode.front] : card_data.front;
   backText.textContent  = currentMode ? card_data[currentMode.back]  : card_data.back;
+  backNote.textContent  = (currentMode?.backNote) ? (card_data[currentMode.backNote] ?? '') : '';
   progress.textContent = `${currentIndex + 1} / ${deck.length}`;
   prevBtn.disabled = currentIndex === 0;
   nextBtn.disabled = currentIndex === deck.length - 1;
