@@ -222,6 +222,32 @@ main {
 
 /* ── Navigation ── */
 
+.card-actions {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.card-actions button {
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--grey);
+  cursor: pointer;
+  transition: color 0.15s;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+}
+
+.card-actions button:hover {
+  color: var(--dark);
+  border-bottom-color: var(--dark);
+}
+
 .nav {
   display: flex;
   align-items: center;

@@ -11,14 +11,17 @@
     <h1>Flashcards</h1>
     <div class="controls">
       <select id="category-select" aria-label="Select category"></select>
-      <button id="shuffle-btn" title="Shuffle cards">Shuffle</button>
-      <button id="reset-btn" title="Reset to start">Reset</button>
     </div>
   </header>
 
   <section id="group-filter" class="group-filter hidden" aria-label="Filter by group"></section>
 
   <main>
+    <div class="card-actions">
+      <button id="shuffle-btn" title="Shuffle cards">Shuffle</button>
+      <button id="reset-btn" title="Reset to start">Reset</button>
+    </div>
+
     <div id="card-container">
       <div id="card" class="card" role="button" tabindex="0" aria-label="Flashcard — click to flip">
         <div class="card-inner">
