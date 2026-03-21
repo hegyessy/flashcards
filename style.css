@@ -166,7 +166,7 @@ main {
 #card-container {
   perspective: 1200px;
   width: min(360px, 90vw);
-  height: 240px;
+  height: clamp(220px, 62vw, 320px);
 }
 
 .card {
@@ -211,14 +211,14 @@ main {
 }
 
 #card-front-text {
-  font-size: 7rem;
+  font-size: clamp(2.5rem, 16vw, 6.5rem);
   font-weight: 300;
   line-height: 1;
   color: var(--dark);
 }
 
 #card-back-text {
-  font-size: 2.4rem;
+  font-size: clamp(1.5rem, 8vw, 2.4rem);
   font-weight: 300;
   letter-spacing: 0.18em;
   text-transform: lowercase;
@@ -226,7 +226,7 @@ main {
 }
 
 .card-back-note {
-  font-size: 1rem;
+  font-size: clamp(0.75rem, 3vw, 1rem);
   font-weight: 400;
   color: rgba(255, 255, 255, 0.45);
   margin-top: 1rem;
@@ -241,7 +241,7 @@ main {
 }
 
 .card-front-note {
-  font-size: 1rem;
+  font-size: clamp(0.75rem, 3vw, 1rem);
   font-weight: 400;
   letter-spacing: 0.08em;
   color: var(--grey);
