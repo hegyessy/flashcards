@@ -3,9 +3,9 @@
   "name": "Numbers",
   "description": "Japanese numbers by magnitude",
   "modes": [
-    { "id": "numeral-to-kana", "label": "1 → 読み", "front": "numeral", "back": "kana", "backNote": "romaji" },
-    { "id": "kanji-to-kana",   "label": "一 → 読み", "front": "kanji",   "back": "kana", "backNote": "romaji" },
-    { "id": "kana-to-numeral", "label": "読み → 1",  "front": "kana",    "back": "numeral" }
+    { "id": "numeral-to-kana", "label": "1 → 読み", "front": "numeral", "back": "kana",    "frontNote": "romaji" },
+    { "id": "kanji-to-kana",   "label": "一 → 読み", "front": "kanji",   "back": "kana",    "frontNote": "romaji" },
+    { "id": "kana-to-numeral", "label": "読み → 1",  "front": "kana",    "back": "numeral", "frontNote": "romaji" }
   ],
   "cards": [
     { "numeral": "1",     "kanji": "一",   "kana": "いち",         "romaji": "ichi",          "group": "1-10"  },

@@ -202,12 +202,12 @@ main {
 .card-front {
   background: var(--surface);
   border: 1px solid var(--grey-light);
+  flex-direction: column;
 }
 
 .card-back {
   background: var(--dark);
   transform: rotateY(180deg);
-  flex-direction: column;
 }
 
 .card-front span {
@@ -225,7 +225,7 @@ main {
   color: var(--orange);
 }
 
-.card-back-note {
+.card-front-note {
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0.08em;
@@ -233,7 +233,7 @@ main {
   margin-top: 0.6rem;
 }
 
-.card-back-note:empty {
+.card-front-note:empty {
   display: none;
 }
 
