@@ -9,6 +9,8 @@ let currentIndex = 0;
 let isFlipped = false;
 let availableGroups = [];
 let selectedGroups = new Set();
+let availableModes = [];  // mode objects from deck JSON (optional)
+let currentMode = null;   // active mode object, or null for standard decks
 
 // DOM refs
 const categorySelect = document.getElementById('category-select');
@@ -21,6 +23,7 @@ const nextBtn = document.getElementById('next-btn');
 const shuffleBtn = document.getElementById('shuffle-btn');
 const resetBtn = document.getElementById('reset-btn');
 const groupFilter = document.getElementById('group-filter');
+const modeSelector = document.getElementById('mode-selector');
 
 // --- Data loading ---
 
@@ -34,6 +37,8 @@ async function loadDeck(file) {
   const res = await fetch(file);
   if (!res.ok) throw new Error(`Failed to load deck: ${res.status}`);
   const data = await res.json();
+  availableModes = data.modes ?? [];
+  currentMode = availableModes[0] ?? null;
   return data.cards;
 }
 
@@ -53,6 +58,30 @@ function buildActiveDeck() {
     return [...fullDeck];
   }
   return fullDeck.filter(c => selectedGroups.has(c.group));
+}
+
+// --- Mode selector UI ---
+
+function renderModeSelector() {
+  modeSelector.innerHTML = '';
+  if (availableModes.length === 0) {
+    modeSelector.classList.add('hidden');
+    return;
+  }
+
+  modeSelector.classList.remove('hidden');
+
+  availableModes.forEach(mode => {
+    const btn = document.createElement('button');
+    btn.textContent = mode.label;
+    btn.className = 'group-btn' + (currentMode?.id === mode.id ? ' active' : '');
+    btn.addEventListener('click', () => {
+      currentMode = mode;
+      showCard();
+      renderModeSelector();
+    });
+    modeSelector.appendChild(btn);
+  });
 }
 
 // --- Group filter UI ---
@@ -117,8 +146,8 @@ function showCard() {
     return;
   }
   const card_data = deck[currentIndex];
-  frontText.textContent = card_data.front;
-  backText.textContent = card_data.back;
+  frontText.textContent = currentMode ? card_data[currentMode.front] : card_data.front;
+  backText.textContent  = currentMode ? card_data[currentMode.back]  : card_data.back;
   progress.textContent = `${currentIndex + 1} / ${deck.length}`;
   prevBtn.disabled = currentIndex === 0;
   nextBtn.disabled = currentIndex === deck.length - 1;
@@ -186,6 +215,7 @@ categorySelect.addEventListener('change', async () => {
   selectedGroups = new Set(availableGroups);
   deck = buildActiveDeck();
   currentIndex = 0;
+  renderModeSelector();
   renderGroupFilter();
   showCard();
 });
@@ -207,6 +237,7 @@ async function init() {
       availableGroups = [...new Set(fullDeck.map(c => c.group).filter(Boolean))];
       selectedGroups = new Set(availableGroups);
       deck = buildActiveDeck();
+      renderModeSelector();
       renderGroupFilter();
       showCard();
     }

@@ -92,6 +92,22 @@ header h1 {
   border-bottom-color: var(--dark);
 }
 
+/* ── Mode selector ── */
+
+.mode-selector {
+  background: var(--surface);
+  border-bottom: 1px solid var(--grey-light);
+  padding: 0.75rem 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.mode-selector.hidden {
+  display: none;
+}
+
 /* ── Group filter ── */
 
 .group-filter {

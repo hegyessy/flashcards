@@ -3,5 +3,10 @@
     "id": "hiragana",
     "name": "Hiragana",
     "file": "data/hiragana.json"
+  },
+  {
+    "id": "numbers",
+    "name": "Numbers",
+    "file": "data/numbers.json"
   }
 ]
