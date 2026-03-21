@@ -217,12 +217,27 @@ main {
   color: var(--dark);
 }
 
-.card-back span {
+#card-back-text {
   font-size: 2.4rem;
   font-weight: 300;
   letter-spacing: 0.18em;
   text-transform: lowercase;
   color: var(--orange);
+}
+
+.card-back-note {
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 1rem;
+  white-space: pre-line;
+  text-align: center;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+.card-back-note:empty {
+  display: none;
 }
 
 .card-front-note {

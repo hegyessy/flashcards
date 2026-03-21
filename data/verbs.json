@@ -1,0 +1,322 @@
+{
+  "id": "verbs",
+  "name": "Verbs",
+  "modes": [
+    {
+      "id": "jp-to-en",
+      "label": "JP → EN",
+      "front": "japanese",
+      "frontNote": "romaji",
+      "back": "english",
+      "backNote": "example"
+    }
+  ],
+  "cards": [
+    {
+      "japanese": "磨く",
+      "romaji": "migaku",
+      "english": "brush",
+      "example": "歯を磨く。\nHa o migaku."
+    },
+    {
+      "japanese": "シャワーを浴びる",
+      "romaji": "shawā o abiru",
+      "english": "shower",
+      "example": "毎朝シャワーを浴びる。\nMaiasa shawā o abiru."
+    },
+    {
+      "japanese": "洗う",
+      "romaji": "arau",
+      "english": "wash",
+      "example": "手を洗う。\nTe o arau."
+    },
+    {
+      "japanese": "話す",
+      "romaji": "hanasu",
+      "english": "talk",
+      "example": "友達と話す。\nTomodachi to hanasu."
+    },
+    {
+      "japanese": "開ける",
+      "romaji": "akeru",
+      "english": "open",
+      "example": "ドアを開ける。\nDoa o akeru."
+    },
+    {
+      "japanese": "終わる",
+      "romaji": "owaru",
+      "english": "finish",
+      "example": "仕事が終わる。\nShigoto ga owaru."
+    },
+    {
+      "japanese": "見る",
+      "romaji": "miru",
+      "english": "watch",
+      "example": "テレビを見る。\nTerebi o miru."
+    },
+    {
+      "japanese": "勉強する",
+      "romaji": "benkyō suru",
+      "english": "study",
+      "example": "日本語を勉強する。\nNihongo o benkyō suru."
+    },
+    {
+      "japanese": "聞く",
+      "romaji": "kiku",
+      "english": "listen",
+      "example": "音楽を聞く。\nOngaku o kiku."
+    },
+    {
+      "japanese": "死ぬ",
+      "romaji": "shinu",
+      "english": "die",
+      "example": "花が死ぬ。\nHana ga shinu."
+    },
+    {
+      "japanese": "待つ",
+      "romaji": "matsu",
+      "english": "wait",
+      "example": "バスを待つ。\nBasu o matsu."
+    },
+    {
+      "japanese": "欲しい",
+      "romaji": "hoshii",
+      "english": "want",
+      "example": "水が欲しい。\nMizu ga hoshii."
+    },
+    {
+      "japanese": "読む",
+      "romaji": "yomu",
+      "english": "read",
+      "example": "本を読む。\nHon o yomu."
+    },
+    {
+      "japanese": "探す",
+      "romaji": "sagasu",
+      "english": "search",
+      "example": "鍵を探す。\nKagi o sagasu."
+    },
+    {
+      "japanese": "観光旅行する",
+      "romaji": "kankō ryokō suru",
+      "english": "tour",
+      "example": "京都を観光旅行する。\nKyōto o kankō ryokō suru."
+    },
+    {
+      "japanese": "置く",
+      "romaji": "oku",
+      "english": "put",
+      "example": "本を置く。\nHon o oku."
+    },
+    {
+      "japanese": "使う",
+      "romaji": "tsukau",
+      "english": "use",
+      "example": "箸を使う。\nHashi o tsukau."
+    },
+    {
+      "japanese": "乗る",
+      "romaji": "noru",
+      "english": "ride",
+      "example": "バスに乗る。\nBasu ni noru."
+    },
+    {
+      "japanese": "取り消す",
+      "romaji": "torikesu",
+      "english": "cancel",
+      "example": "予約を取り消す。\nYoyaku o torikesu."
+    },
+    {
+      "japanese": "する",
+      "romaji": "suru",
+      "english": "do",
+      "example": "宿題をする。\nShukudai o suru."
+    },
+    {
+      "japanese": "行く",
+      "romaji": "iku",
+      "english": "go",
+      "example": "学校に行く。\nGakkō ni iku."
+    },
+    {
+      "japanese": "食べる",
+      "romaji": "taberu",
+      "english": "eat",
+      "example": "ご飯を食べる。\nGohan o taberu."
+    },
+    {
+      "japanese": "来る",
+      "romaji": "kuru",
+      "english": "come",
+      "example": "友達が来る。\nTomodachi ga kuru."
+    },
+    {
+      "japanese": "立つ",
+      "romaji": "tatsu",
+      "english": "stand",
+      "example": "ここに立つ。\nKoko ni tatsu."
+    },
+    {
+      "japanese": "言う",
+      "romaji": "iu",
+      "english": "say",
+      "example": "名前を言う。\nNamae o iu."
+    },
+    {
+      "japanese": "電話する",
+      "romaji": "denwa suru",
+      "english": "call",
+      "example": "母に電話する。\nHaha ni denwa suru."
+    },
+    {
+      "japanese": "笑う",
+      "romaji": "warau",
+      "english": "laugh",
+      "example": "一緒に笑う。\nIsshoni warau."
+    },
+    {
+      "japanese": "思い出す",
+      "romaji": "omoidasu",
+      "english": "remember",
+      "example": "名前を思い出す。\nNamae o omoidasu."
+    },
+    {
+      "japanese": "作る",
+      "romaji": "tsukuru",
+      "english": "make",
+      "example": "料理を作る。\nRyōri o tsukuru."
+    },
+    {
+      "japanese": "見る",
+      "romaji": "miru",
+      "english": "see",
+      "example": "景色を見る。\nKeshiki o miru."
+    },
+    {
+      "japanese": "旅行する",
+      "romaji": "ryokō suru",
+      "english": "travel",
+      "example": "海外を旅行する。\nKaigai o ryokō suru."
+    },
+    {
+      "japanese": "休む",
+      "romaji": "yasumu",
+      "english": "rest",
+      "example": "家で休む。\nIe de yasumu."
+    },
+    {
+      "japanese": "料理する",
+      "romaji": "ryōri suru",
+      "english": "cook",
+      "example": "夕食を料理する。\nYūshoku o ryōri suru."
+    },
+    {
+      "japanese": "帰る",
+      "romaji": "kaeru",
+      "english": "return",
+      "example": "家に帰る。\nIe ni kaeru."
+    },
+    {
+      "japanese": "風呂に入る",
+      "romaji": "furo ni hairu",
+      "english": "bathe",
+      "example": "毎晩風呂に入る。\nMaiban furo ni hairu."
+    },
+    {
+      "japanese": "寝る",
+      "romaji": "neru",
+      "english": "sleep",
+      "example": "早く寝る。\nHayaku neru."
+    },
+    {
+      "japanese": "起きる",
+      "romaji": "okiru",
+      "english": "wake up",
+      "example": "六時に起きる。\nRokuji ni okiru."
+    },
+    {
+      "japanese": "感じる",
+      "romaji": "kanjiru",
+      "english": "feel",
+      "example": "痛みを感じる。\nItami o kanjiru."
+    },
+    {
+      "japanese": "描く",
+      "romaji": "kaku",
+      "english": "draw",
+      "example": "絵を描く。\nE o kaku."
+    },
+    {
+      "japanese": "つける",
+      "romaji": "tsukeru",
+      "english": "turn on",
+      "example": "電気をつける。\nDenki o tsukeru."
+    },
+    {
+      "japanese": "着く",
+      "romaji": "tsuku",
+      "english": "arrive",
+      "example": "駅に着く。\nEki ni tsuku."
+    },
+    {
+      "japanese": "答える",
+      "romaji": "kotaeru",
+      "english": "answer",
+      "example": "質問に答える。\nShitsumon ni kotaeru."
+    },
+    {
+      "japanese": "教える",
+      "romaji": "oshieru",
+      "english": "teach",
+      "example": "英語を教える。\nEigo o oshieru."
+    },
+    {
+      "japanese": "質問する",
+      "romaji": "shitsumon suru",
+      "english": "ask",
+      "example": "先生に質問する。\nSensei ni shitsumon suru."
+    },
+    {
+      "japanese": "もらう",
+      "romaji": "morau",
+      "english": "receive",
+      "example": "プレゼントをもらう。\nPurezento o morau."
+    },
+    {
+      "japanese": "計画する",
+      "romaji": "keikaku suru",
+      "english": "plan",
+      "example": "旅行を計画する。\nRyokō o keikaku suru."
+    },
+    {
+      "japanese": "説明する",
+      "romaji": "setsumei suru",
+      "english": "explain",
+      "example": "理由を説明する。\nRiyū o setsumei suru."
+    },
+    {
+      "japanese": "できる",
+      "romaji": "dekiru",
+      "english": "can",
+      "example": "日本語ができる。\nNihongo ga dekiru."
+    },
+    {
+      "japanese": "閉める",
+      "romaji": "shimeru",
+      "english": "close",
+      "example": "ドアを閉める。\nDoa o shimeru."
+    },
+    {
+      "japanese": "買う",
+      "romaji": "kau",
+      "english": "buy",
+      "example": "パンを買う。\nPan o kau."
+    },
+    {
+      "japanese": "走る",
+      "romaji": "hashiru",
+      "english": "run",
+      "example": "公園を走る。\nKōen o hashiru."
+    }
+  ]
+}

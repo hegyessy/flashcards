@@ -8,5 +8,10 @@
     "id": "numbers",
     "name": "Numbers",
     "file": "data/numbers.json"
+  },
+  {
+    "id": "verbs",
+    "name": "Verbs",
+    "file": "data/verbs.json"
   }
 ]
