@@ -1,7 +1,7 @@
 {
   "id": "hiragana",
   "name": "Hiragana",
-  "description": "Japanese hiragana syllabary — 46 basic characters",
+  "description": "Japanese hiragana syllabary — 46 basic + 25 dakuon/handakuon characters",
   "cards": [
     { "front": "あ", "back": "a",   "group": "a" },
     { "front": "い", "back": "i",   "group": "a" },
@@ -48,6 +48,31 @@
     { "front": "ろ", "back": "ro",  "group": "ra" },
     { "front": "わ", "back": "wa",  "group": "wa" },
     { "front": "を", "back": "wo",  "group": "wa" },
-    { "front": "ん", "back": "n",   "group": "wa" }
+    { "front": "ん", "back": "n",   "group": "wa" },
+    { "front": "が", "back": "ga",  "group": "ga" },
+    { "front": "ぎ", "back": "gi",  "group": "ga" },
+    { "front": "ぐ", "back": "gu",  "group": "ga" },
+    { "front": "げ", "back": "ge",  "group": "ga" },
+    { "front": "ご", "back": "go",  "group": "ga" },
+    { "front": "ざ", "back": "za",  "group": "za" },
+    { "front": "じ", "back": "ji",  "group": "za" },
+    { "front": "ず", "back": "zu",  "group": "za" },
+    { "front": "ぜ", "back": "ze",  "group": "za" },
+    { "front": "ぞ", "back": "zo",  "group": "za" },
+    { "front": "だ", "back": "da",  "group": "da" },
+    { "front": "ぢ", "back": "di",  "group": "da" },
+    { "front": "づ", "back": "du",  "group": "da" },
+    { "front": "で", "back": "de",  "group": "da" },
+    { "front": "ど", "back": "do",  "group": "da" },
+    { "front": "ば", "back": "ba",  "group": "ba" },
+    { "front": "び", "back": "bi",  "group": "ba" },
+    { "front": "ぶ", "back": "bu",  "group": "ba" },
+    { "front": "べ", "back": "be",  "group": "ba" },
+    { "front": "ぼ", "back": "bo",  "group": "ba" },
+    { "front": "ぱ", "back": "pa",  "group": "pa" },
+    { "front": "ぴ", "back": "pi",  "group": "pa" },
+    { "front": "ぷ", "back": "pu",  "group": "pa" },
+    { "front": "ぺ", "back": "pe",  "group": "pa" },
+    { "front": "ぽ", "back": "po",  "group": "pa" }
   ]
 }
