@@ -15,6 +15,8 @@
   --radius: 2px;
 }
 
+.hidden { display: none !important; }
+
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background: var(--bg);
@@ -250,6 +252,64 @@ main {
 
 .card-front-note:empty {
   display: none;
+}
+
+/* ── Card back: standard wrapper ── */
+
+#card-back-standard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ── Card back: two-column grid ── */
+
+.back-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  height: 100%;
+}
+
+.back-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 0.75rem;
+}
+
+.back-col:first-child {
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.back-word {
+  font-size: clamp(1.2rem, 5.5vw, 1.8rem);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: lowercase;
+}
+
+.back-sub {
+  font-size: clamp(0.6rem, 2.3vw, 0.78rem);
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.06em;
+  text-align: center;
+  margin-top: -0.2rem;
+}
+
+.back-sentence {
+  font-size: clamp(0.65rem, 2.8vw, 0.9rem);
+  color: rgba(255, 255, 255, 0.65);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.hl {
+  color: var(--orange);
 }
 
 /* Tap hint */

@@ -24,8 +24,10 @@ const shuffleBtn = document.getElementById('shuffle-btn');
 const resetBtn = document.getElementById('reset-btn');
 const groupFilter = document.getElementById('group-filter');
 const modeSelector = document.getElementById('mode-selector');
-const frontNote = document.getElementById('card-front-note');
-const backNote = document.getElementById('card-back-note');
+const frontNote        = document.getElementById('card-front-note');
+const backNote         = document.getElementById('card-back-note');
+const cardBackStandard = document.getElementById('card-back-standard');
+const cardBackGrid     = document.getElementById('card-back-grid');
 
 // --- Data loading ---
 
@@ -135,13 +137,41 @@ function applyGroupFilter() {
   renderGroupFilter();
 }
 
+// --- Render helpers ---
+
+function escapeHtml(str) {
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function highlight(sentence, word) {
+  const safe    = escapeHtml(sentence);
+  const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return safe.replace(new RegExp(`(${escaped})`, 'i'), '<span class="hl">$1</span>');
+}
+
+function buildTwoColumnBack(d) {
+  return `
+    <div class="back-col">
+      <div class="back-word"><span class="hl">${escapeHtml(d.english)}</span></div>
+      <div class="back-sentence">${highlight(d.exampleEn, d.english)}</div>
+    </div>
+    <div class="back-col">
+      <div class="back-word"><span class="hl">${escapeHtml(d.japanese)}</span></div>
+      <div class="back-sub">${escapeHtml(d.romaji)}</div>
+      <div class="back-sentence">${highlight(d.exampleJp, d.japanese)}</div>
+      <div class="back-sub">${escapeHtml(d.exampleRomaji)}</div>
+    </div>`;
+}
+
 // --- Render ---
 
 function showCard() {
   if (deck.length === 0) {
     frontText.textContent = '';
-    backText.textContent = '';
     frontNote.textContent = '';
+    cardBackStandard.classList.remove('hidden');
+    cardBackGrid.classList.add('hidden');
+    backText.textContent = '';
     backNote.textContent = '';
     progress.textContent = '0 / 0';
     prevBtn.disabled = true;
@@ -151,9 +181,17 @@ function showCard() {
   }
   const card_data = deck[currentIndex];
   frontText.textContent = currentMode ? card_data[currentMode.front] : card_data.front;
-  backText.textContent  = currentMode ? card_data[currentMode.back]  : card_data.back;
   frontNote.textContent = (currentMode?.frontNote) ? (card_data[currentMode.frontNote] ?? '') : '';
-  backNote.textContent  = (currentMode?.backNote)  ? (card_data[currentMode.backNote]  ?? '') : '';
+  if (currentMode?.layout === 'two-column') {
+    cardBackStandard.classList.add('hidden');
+    cardBackGrid.classList.remove('hidden');
+    cardBackGrid.innerHTML = buildTwoColumnBack(card_data);
+  } else {
+    cardBackStandard.classList.remove('hidden');
+    cardBackGrid.classList.add('hidden');
+    backText.textContent = currentMode ? card_data[currentMode.back] : card_data.back;
+    backNote.textContent = currentMode?.backNote ? (card_data[currentMode.backNote] ?? '') : '';
+  }
   progress.textContent = `${currentIndex + 1} / ${deck.length}`;
   prevBtn.disabled = currentIndex === 0;
   nextBtn.disabled = currentIndex === deck.length - 1;
